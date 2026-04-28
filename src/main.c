@@ -210,17 +210,19 @@ void render(){
     SDL_Texture* p1_tex = SDL_CreateTextureFromSurface(renderer, p1_surf);
     SDL_Texture* p2_tex = SDL_CreateTextureFromSurface(renderer, p2_surf);
 
+    int scale_factor = 2; // Change this to 3 or 4 for massive text
+
     SDL_Rect p1_rect;
-    p1_rect.x = WINDOW_WIDTH / 4; // Left side
+    p1_rect.w = p1_surf->w * scale_factor;
+    p1_rect.h = p1_surf->h * scale_factor;
+    p1_rect.x = (WINDOW_WIDTH / 4) - (p1_rect.w / 2); // Keeps it centered
     p1_rect.y = 20;
-    p1_rect.w = p1_surf->w;
-    p1_rect.h = p1_surf->h;
 
     SDL_Rect p2_rect;
-    p2_rect.x = (WINDOW_WIDTH / 4) * 3; // Right side
+    p2_rect.w = p2_surf->w * scale_factor;
+    p2_rect.h = p2_surf->h * scale_factor;
+    p2_rect.x = ((WINDOW_WIDTH / 4) * 3) - (p2_rect.w / 2); // Keeps it centered
     p2_rect.y = 20;
-    p2_rect.w = p2_surf->w;
-    p2_rect.h = p2_surf->h;
 
     SDL_FreeSurface(p1_surf);
     SDL_FreeSurface(p2_surf);
