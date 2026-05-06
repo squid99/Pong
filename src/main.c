@@ -12,7 +12,7 @@ SDL_Color text_color = {255, 255, 255, 155};
 
 int last_frame_time = 0;
 
-struct player1{
+struct player{
     float x;
     float y;
     float width;
@@ -21,18 +21,7 @@ struct player1{
     int move_up;
     int move_down;
     int score;
-} player1;
-
-struct player2{
-    float x;
-    float y;
-    float width;
-    float height;
-    int speed;
-    int move_up;
-    int move_down;
-    int score;
-} player2;
+} player1,player2;
 
 struct ball{
     float x;
